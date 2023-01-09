@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   namespace :admin do
-    devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions" }, skip: { :registrations }
+    devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions" }, skip:  [:registrations]
   end
   namespace :store_owner do
-    devise_for :store_owners, path: 'store_owners', controllers: { sessions: "store_owners/sessions", registrations: '/registrations' }
+    devise_for :store_owners, path: 'store_owners', controllers: { sessions: "store_owners/sessions", registrations: 'store_owners/registrations' }
   end
-  devise_for :customers, path: 'customers', controllers: { sessions: "customers/sessions", registrations: '/registrations' }
+  devise_for :users, path: 'users', controllers: { sessions: "users/sessions", registrations: 'users/registrations' }
   # devise_for :users, path: 'users'
   # devise_for :customers
   # devise_for :store_owners
